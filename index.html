@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ritu Raj - Quality Automation Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #e0e6ed;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(15, 15, 35, 0.95);
+            backdrop-filter: blur(20px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 30px rgba(0, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #00d4ff, #5200ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #e0e6ed;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #00d4ff;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background: linear-gradient(45deg, #00d4ff, #5200ff);
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+            left: 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            color: #e0e6ed;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(82, 0, 255, 0.1) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #00d4ff, #5200ff, #ff0080);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero .subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #00d4ff;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero .location {
+            font-size: 1.1rem;
+            color: #a0a6b3;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .hero .description {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: #c0c6d3;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #00d4ff, #5200ff);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease 0.6s both;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover:before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 0;
+            background: rgba(15, 15, 35, 0.5);
+            position: relative;
+        }
+
+        .section:nth-child(even) {
+            background: rgba(26, 26, 46, 0.5);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 3rem;
+            background: linear-gradient(45deg, #00d4ff, #5200ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-category {
+            background: rgba(15, 15, 35, 0.8);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-category:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(45deg, #00d4ff, #5200ff);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+            border-color: rgba(0, 212, 255, 0.5);
+        }
+
+        .skill-category h3 {
+            color: #00d4ff;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-tag {
+            background: linear-gradient(45deg, rgba(0, 212, 255, 0.2), rgba(82, 0, 255, 0.2));
+            color: #e0e6ed;
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: linear-gradient(45deg, rgba(0, 212, 255, 0.4), rgba(82, 0, 255, 0.4));
+            transform: translateY(-2px);
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: rgba(15, 15, 35, 0.8);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+            border-color: rgba(0, 212, 255, 0.5);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, #00d4ff, #5200ff);
+            color: white;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-header:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: rotate(45deg) translateX(-100%); }
+            50% { transform: rotate(45deg) translateX(100%); }
+            100% { transform: rotate(45deg) translateX(100%); }
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-type {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        .project-body {
+            padding: 2rem;
+        }
+
+        .project-description {
+            margin-bottom: 1.5rem;
+            color: #c0c6d3;
+            line-height: 1.7;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1rem;
+        }
+
+        .tech-tag {
+            background: rgba(0, 212, 255, 0.1);
+            color: #00d4ff;
+            padding: 0.4rem 1rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        /* Experience */
+        .experience-timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .experience-item {
+            background: rgba(15, 15, 35, 0.8);
+            padding: 2.5rem;
+            margin: 2rem 0;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            backdrop-filter: blur(10px);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateX(10px);
+            border-color: rgba(0, 212, 255, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.1);
+        }
+
+        .experience-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(45deg, #00d4ff, #5200ff);
+        }
+
+        .experience-item h3 {
+            color: #00d4ff;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-company {
+            font-weight: 600;
+            color: #e0e6ed;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .experience-period {
+            color: #a0a6b3;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-description {
+            color: #c0c6d3;
+            line-height: 1.7;
+        }
+
+        .experience-description ul {
+            margin-left: 1.5rem;
+        }
+
+        .experience-description li {
+            margin-bottom: 0.8rem;
+        }
+
+        /* Achievements */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .achievement-card {
+            background: rgba(15, 15, 35, 0.8);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(255, 215, 0, 0.2);
+            border-color: rgba(255, 215, 0, 0.6);
+        }
+
+        .achievement-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .achievement-card h3 {
+            color: #ffd700;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* Education */
+        .education-card {
+            background: rgba(15, 15, 35, 0.8);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            backdrop-filter: blur(10px);
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .education-card h3 {
+            color: #00d4ff;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .education-details {
+            color: #c0c6d3;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Contact */
+        .contact-info {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            color: #e0e6ed;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 1.5rem;
+            background: rgba(15, 15, 35, 0.8);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-link:hover {
+            color: #00d4ff;
+            border-color: rgba(0, 212, 255, 0.5);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 212, 255, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(15, 15, 35, 0.9);
+            color: #a0a6b3;
+            text-align: center;
+            padding: 3rem 0;
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.4rem;
+            }
+            
+            .skills-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-links {
+                grid-template-columns: 1fr;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(15, 15, 35, 0.5);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, #00d4ff, #5200ff);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(45deg, #5200ff, #00d4ff);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Ritu Raj</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>Ritu Raj</h1>
+                <p class="subtitle">Quality Automation Engineer</p>
+                <p class="location">📍 Pune, India</p>
+                <p class="description">
+                    A highly motivated and results-oriented Software Quality Automation Engineer with 4+ years of experience 
+                    excelling in Agile Scrum environments. Proficient in both manual and automation testing, with expertise 
+                    in Robot Framework, Selenium with Python, and PyTest, along with decent experience in performance testing. 
+                    Skilled in developing and implementing comprehensive testing strategies to ensure the highest quality software.
+                </p>
+                <a href="#contact" class="cta-button">Let's Connect</a>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="section-title">Technical Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>🚀 Core Areas</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Automation Testing</span>
+                            <span class="skill-tag">Manual Testing</span>
+                            <span class="skill-tag">API Testing</span>
+                            <span class="skill-tag">Regression Testing</span>
+                            <span class="skill-tag">Integration Testing</span>
+                            <span class="skill-tag">Performance Testing</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>🛠️ Tools & Frameworks</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Robot Framework</span>
+                            <span class="skill-tag">Selenium</span>
+                            <span class="skill-tag">PyTest</span>
+                            <span class="skill-tag">Postman</span>
+                            <span class="skill-tag">Jenkins</span>
+                            <span class="skill-tag">Jira</span>
+                            <span class="skill-tag">Xray</span>
+                            <span class="skill-tag">Zephyr</span>
+                            <span class="skill-tag">Wireshark</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Kubernetes</span>
+                            <span class="skill-tag">Zabbix</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>💻 Programming Languages</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">SQL</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>🏗️ Architecture & Methodologies</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Microservices</span>
+                            <span class="skill-tag">On Prem</span>
+                            <span class="skill-tag">SaaS</span>
+                            <span class="skill-tag">Agile/Scrum</span>
+                            <span class="skill-tag">CI/CD</span>
+                            <span class="skill-tag">Data-Driven Testing</span>
+                            <span class="skill-tag">Behaviour DRiven</span>
+                            <span class="skill-tag">Test Driven</span>
+                            <span class="skill-tag">Page Object Model</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Secondary Skills</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Telecom Domain</span>
+                            <span class="skill-tag">RabbitMQ</span>
+                            <span class="skill-tag">Kafka</span>
+                            <span class="skill-tag">Redis</span>
+                            <span class="skill-tag">Unix OS</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GitLab</span>
+                            <span class="skill-tag">GitHub</span>
+                            <span class="skill-tag">Bitbucket</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">Professional Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">True Sight Server Automation</div>
+                            <div class="project-type">Enterprise Servers Automation Solution</div>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">
+                                Developed comprehensive automation framework for BMC TrueSight Server Automation, 
+                                focusing on Jenkins pipeline optimization and CI/CD reliability. Improved pipeline 
+                                pass rate from 15% to 100% and resolved 800+ failing test cases.
+                            </p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Robot Framework</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Jenkins</span>
+                                <span class="tech-tag">CI/CD</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">Charging Gateway</div>
+                            <div class="project-type">Telecom Billing System</div>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">
+                                Sophisticated Charging Gateway for telecom domain designed to handle incoming SMS, MMS, 
+                                Voice, and Data traffic. Enhanced billing accuracy and efficiency while ensuring 
+                                compliance with operator-specific charging requirements.
+                            </p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Robot Framework</span>
+                                <span class="tech-tag">Docker</span>
+                                <span class="tech-tag">Kubernetes</span>
+                                <span class="tech-tag">Kafka</span>
+                                <span class="tech-tag">Postman</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">SmartNForce</div>
+                            <div class="project-type">SMS Firewall Security</div>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">
+                                Advanced SMS Firewalling Software for telecom domain focusing on enhancing security 
+                                and management of SMS traffic. Contributed to improving network security, reducing 
+                                spam, and increasing user trust.
+                            </p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Robot Framework</span>
+                                <span class="tech-tag">SQL</span>
+                                <span class="tech-tag">Kafka</span>
+                                <span class="tech-tag">Redis</span>
+                                <span class="tech-tag">Wireshark</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">SmartXChange</div>
+                            <div class="project-type">A2P Messaging System</div>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">
+                                Comprehensive A2P (Application-to-Person) message delivery and charging system for 
+                                telecom domain. Significantly improved efficiency and profitability of A2P messaging 
+                                services for telecom operators.
+                            </p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Selenium</span>
+                                <span class="tech-tag">PyTest</span>
+                                <span class="tech-tag">Docker</span>
+                                <span class="tech-tag">RabbitMQ</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <div class="container">
+                <h2 class="section-title">Professional Journey</h2>
+                <div class="experience-timeline">
+                    <div class="experience-item">
+                        <h3>Quality Automation Engineer II</h3>
+                        <div class="experience-company">BMC Software Pvt. Ltd.</div>
+                        <div class="experience-period">December 2024 - Present</div>
+                        <div class="experience-description">
+                            <ul>
+                                <li>Rectified automation Jenkins pipeline failures, improving pass rate from <strong>15% to 100%</strong>, ensuring uninterrupted CI/CD flow</li>
+                                <li>Resolved <strong>800+</strong> failing test cases in another pipeline, increasing execution efficiency from <strong>75% to 99%</strong></li>
+                                <li>Automated backlog of critical test areas and implemented automation for <strong>new OS support</strong>, significantly reducing manual qualification time</li>
+                                <li>Performed <strong>Security Vulnerability Testing</strong> by enhancing automation infrastructure and extending framework capabilities</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <h3>Software Engineer - R&D (Full Time)</h3>
+                        <div class="experience-company">Telaverge Communications Pvt Ltd.</div>
+                        <div class="experience-period">July 2022 - December 2024</div>
+                        <div class="experience-description">
+                            <ul>
+                                <li>Drove quality assurance efforts as key member of Scrum Team, ensuring robustness of microservices and modular architecture products</li>
+                                <li>Implemented automation scripts for frontend, backend & API, integrated with Jenkins, cutting regression testing hours by <strong>50%</strong></li>
+                                <li>Led Test planning, Test environment setup, and Test execution for microservice Component testing and Product end-to-end testing</li>
+                                <li>Spearheaded design, execution, and maintenance of automated test scripts for Sanity, Smoke, Regression, Integration and E2E testing</li>
+                                <li>Extensive experience testing Frontend (FE) APIs and Backend (BE) components with holistic QA approach</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <h3>Software Engineer - R&D (Intern)</h3>
+                        <div class="experience-company">Telaverge Communications Pvt Ltd.</div>
+                        <div class="experience-period">August 2021 - June 2022</div>
+                        <div class="experience-description">
+                            <ul>
+                                <li>Started as intern and rapidly contributed to quality assurance initiatives</li>
+                                <li>Collaborated with cross-functional teams to deliver bug-free programs aligned with business needs</li>
+                                <li>Gained hands-on experience in automation testing and microservices architecture</li>
+                                <li>Provided valuable QA perspective to assist developers in addressing ongoing challenges</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="section">
+            <div class="container">
+                <h2 class="section-title">Education</h2>
+                <div class="education-card">
+                    <h3>B.Tech in Computer Science and Engineering</h3>
+                    <div class="education-details">
+                        <p><strong>MAKAUT University</strong></p>
+                        <p>Kolkata, West Bengal, India</p>
+                        <p>July 2018 - June 2022</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements" class="section">
+            <div class="container">
+                <h2 class="section-title">Achievements & Recognition</h2>
+                <div class="achievements-grid">
+                    <div class="achievement-card">
+                        <div class="achievement-icon">🏆</div>
+                        <h3>Best Scrum Team Member Award</h3>
+                        <p>Voted best team member for the sprint multiple times, recognizing exceptional collaboration and contribution to team success.</p>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-icon">⭐</div>
+                        <h3>SPOT Award</h3>
+                        <p>Received SPOT Award for outstanding performance throughout the year, demonstrating consistent excellence in quality assurance.</p>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-icon">📈</div>
+                        <h3>Pipeline Optimization Expert</h3>
+                        <p>Achieved remarkable improvement in CI/CD pipeline reliability from 15% to 100% pass rate, ensuring seamless deployment processes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">Let's Connect</h2>
+                <div class="contact-info">
+                    <p>I'm always interested in discussing QA automation, testing strategies, telecom domain projects, and potential opportunities. Feel free to reach out!</p>
+                    <div class="contact-links">
+                        <a href="mailto:rituraj1311@gmail.com" class="contact-link">
+                            <span>📧</span>
+                            <span>rituraj1311@gmail.com</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/ritu-raj13/" class="contact-link" target="_blank">
+                            <span>💼</span>
+                            <span>LinkedIn Profile</span>
+                        </a>
+                        <a href="https://github.com/ritu-raj13" class="contact-link" target="_blank">
+                            <span>💻</span>
+                            <span>GitHub Portfolio</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ritu Raj. All rights reserved. | Quality Automation Engineer | Pune, India</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(15, 15, 35, 0.98)';
+                header.style.boxShadow = '0 4px 30px rgba(0, 255, 255, 0.2)';
+            } else {
+                header.style.background = 'rgba(15, 15, 35, 0.95)';
+                header.style.boxShadow = '0 4px 30px rgba(0, 255, 255, 0.1)';
+            }
+        });
+
+        // Add animation on scroll for cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.project-card, .skill-category, .experience-item, .achievement-card, .education-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(el);
+        });
+
+        // Add floating animation to achievement icons
+        const achievementIcons = document.querySelectorAll('.achievement-icon');
+        achievementIcons.forEach((icon, index) => {
+            icon.style.animation = `float 3s ease-in-out infinite ${index * 0.5}s`;
+        });
+
+        // Add float keyframe animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float {
+                0%, 100% { transform: translateY(0px); }
+                50% { transform: translateY(-10px); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Add typing effect to hero subtitle
+        const subtitle = document.querySelector('.hero .subtitle');
+        const originalText = subtitle.textContent;
+        subtitle.textContent = '';
+        
+        let i = 0;
+        const typeWriter = () => {
+            if (i < originalText.length) {
+                subtitle.textContent += originalText.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        };
+        
+        // Start typing effect after hero animation
+        setTimeout(typeWriter, 1500);
+
+        // Add particle effect to hero section
+        const createParticles = () => {
+            const hero = document.querySelector('.hero');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.style.cssText = `
+                    position: absolute;
+                    width: 2px;
+                    height: 2px;
+                    background: rgba(0, 212, 255, 0.5);
+                    border-radius: 50%;
+                    pointer-events: none;
+                    animation: particles 20s linear infinite;
+                    left: ${Math.random() * 100}%;
+                    top: ${Math.random() * 100}%;
+                    animation-delay: ${Math.random() * 20}s;
+                `;
+                hero.appendChild(particle);
+            }
+        };
+
+        // Add particles keyframe
+        const particleStyle = document.createElement('style');
+        particleStyle.textContent = `
+            @keyframes particles {
+                0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+                100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(particleStyle);
+
+        // Initialize particles
+        createParticles();
+    </script>
+</body>
+</html>
